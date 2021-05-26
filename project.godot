@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Core Defender"
+run/main_scene="res://Scenes/UID.tscn"
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
+
+[display]
+
+window/size/width=1216
+window/size/height=960
+window/size/test_width=1216
+window/size/test_height=960
+window/dpi/allow_hidpi=true
+mouse_cursor/custom_image="res://Images/Cursor.png"
+
+[input]
+
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[locale]
+
+translations=PoolStringArray( "res://Translation/Translation.en.translation", "res://Translation/Translation.es.translation", "res://Translation/Translation.fr.translation", "res://Translation/Translation.it.translation" )
+locale_filter=[ 1, [ "en", "es", "fr", "it" ] ]
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
