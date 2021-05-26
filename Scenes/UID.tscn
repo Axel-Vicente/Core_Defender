@@ -1,0 +1,136 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Images/startBig.png" type="Texture" id=1]
+[ext_resource path="res://Assets/ButtonsLayout/SleepDownBlack.png" type="Texture" id=2]
+[ext_resource path="res://Assets/ButtonsLayout/SleepDownRed.png" type="Texture" id=3]
+[ext_resource path="res://Images/Layout1.6.2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/ButtonsLayout/PowerIdle.png" type="Texture" id=5]
+[ext_resource path="res://Assets/ButtonsLayout/SleepIdle.png" type="Texture" id=6]
+[ext_resource path="res://Assets/ButtonsLayout/PowerDownBlack.png" type="Texture" id=7]
+[ext_resource path="res://Assets/ButtonsLayout/PowerDownRed.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/UID.gd" type="Script" id=9]
+[ext_resource path="res://Images/startMenu.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=11]
+[ext_resource path="res://Images/ButtonStartMenu.png" type="Texture" id=12]
+[ext_resource path="res://Images/ButtonDownStartMenu.png" type="Texture" id=13]
+[ext_resource path="res://SoundEffects/menu.ogg" type="AudioStream" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="MainLayout" type="Sprite" parent="."]
+position = Vector2( 608, 480 )
+texture = ExtResource( 4 )
+
+[node name="CoreDefenderBackground" type="Sprite" parent="."]
+position = Vector2( 608, 384 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+
+[node name="PowerButton" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 1152.0
+margin_top = 864.0
+margin_right = 1192.0
+margin_bottom = 904.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SleepButton" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 1152.0
+margin_top = 912.0
+margin_right = 1192.0
+margin_bottom = 952.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 450.0
+margin_top = 325.0
+margin_right = 835.0
+margin_bottom = 325.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startMenu" type="Sprite" parent="CenterContainer"]
+position = Vector2( 192, 130 )
+texture = ExtResource( 10 )
+
+[node name="Start" type="TextureButton" parent="."]
+margin_left = 512.0
+margin_top = 368.0
+margin_right = 768.0
+margin_bottom = 436.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Start"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 232.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.639216, 0.639216, 1 )
+text = "Start"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 512.0
+margin_top = 472.0
+margin_right = 768.0
+margin_bottom = 540.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Exit"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 232.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.639216, 0.639216, 1 )
+text = "Exit"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -20.0
+autoplay = true
+[connection signal="pressed" from="PowerButton" to="." method="_on_PowerButton_pressed"]
+[connection signal="pressed" from="SleepButton" to="." method="_on_SleepButton_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

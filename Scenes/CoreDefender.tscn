@@ -1,0 +1,214 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Images/Layout1.6.2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/ButtonsLayout/PowerDownRed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/ButtonsLayout/PowerIdle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ButtonsLayout/PowerDownBlack.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/CoreDefender.gd" type="Script" id=5]
+[ext_resource path="res://Assets/ButtonsLayout/SleepDownBlack.png" type="Texture" id=6]
+[ext_resource path="res://Assets/ButtonsLayout/SleepDownRed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/ButtonsLayout/SleepIdle.png" type="Texture" id=8]
+[ext_resource path="res://Tilemap/Tileset.tres" type="TileSet" id=9]
+[ext_resource path="res://Images/Tileset0.2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=11]
+[ext_resource path="res://Scenes/PauseInteractive.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Images/startMenu.png" type="Texture" id=13]
+[ext_resource path="res://Images/life_bar/LifeBar4.png" type="Texture" id=14]
+[ext_resource path="res://Images/life_bar/LifeBar5.png" type="Texture" id=15]
+[ext_resource path="res://Images/life_bar/LifeBar3.png" type="Texture" id=16]
+[ext_resource path="res://Images/life_bar/LifeBar2.png" type="Texture" id=17]
+[ext_resource path="res://Images/life_bar/LifeBar1.png" type="Texture" id=18]
+[ext_resource path="res://Images/Procesador_Grande.png" type="Texture" id=19]
+[ext_resource path="res://Images/life_bar/LifeBar11.png" type="Texture" id=20]
+[ext_resource path="res://Images/life_bar/LifeBar9.png" type="Texture" id=21]
+[ext_resource path="res://Images/life_bar/LifeBar13.png" type="Texture" id=22]
+[ext_resource path="res://Images/life_bar/LifeBar15.png" type="Texture" id=23]
+[ext_resource path="res://Images/life_bar/LifeBar10.png" type="Texture" id=24]
+[ext_resource path="res://Images/life_bar/LifeBar7.png" type="Texture" id=25]
+[ext_resource path="res://Images/life_bar/LifeBar8.png" type="Texture" id=26]
+[ext_resource path="res://Images/life_bar/LifeBar14.png" type="Texture" id=27]
+[ext_resource path="res://Images/life_bar/LifeBar16.png" type="Texture" id=28]
+[ext_resource path="res://Images/life_bar/LifeBar6.png" type="Texture" id=29]
+[ext_resource path="res://Images/life_bar/LifeBar12.png" type="Texture" id=30]
+[ext_resource path="res://Images/hammer.png" type="Texture" id=31]
+[ext_resource path="res://SoundEffects/track_1.ogg" type="AudioStream" id=32]
+[ext_resource path="res://SoundEffects/comprar_carta.wav" type="AudioStream" id=33]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 64, 160, 0, 0, 0, 0, 352, 160, 0, 0, 0, 0, 352, 288, 0, 0, 0, 0, 160, 288, 0, 0, 0, 0, 160, 416, 0, 0, 0, 0, 288, 416, 0, 0, 0, 0, 288, 544, 0, 0, 0, 0, 96, 544, 0, 0, 0, 0, 96, 672, 0, 0, 0, 0, 608, 672, 0, 0, 0, 0, 608, 480, 0, 0, 0, 0, 544, 480, 0, 0, 0, 0, 544, 96, 0, 0, 0, 0, 736, 96, 0, 0, 0, 0, 736, 416, 0, 0, 0, 0, 1152, 416 )
+}
+
+[sub_resource type="TileSet" id=2]
+0/name = "Tileset0.2.png 0"
+0/texture = ExtResource( 10 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Tileset0.2.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 64, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 11 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 30 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 11 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 27, 16 )
+
+[node name="CoreDefender" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Layout162" type="Sprite" parent="."]
+position = Vector2( 608, 480 )
+texture = ExtResource( 1 )
+
+[node name="CanvasLayerMenu" type="CanvasLayer" parent="."]
+
+[node name="PauseInteractive" parent="CanvasLayerMenu" instance=ExtResource( 12 )]
+visible = false
+
+[node name="PowerButton" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 1152.0
+margin_top = 864.0
+margin_right = 1192.0
+margin_bottom = 904.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SleepButton" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 1152.0
+margin_top = 912.0
+margin_right = 1192.0
+margin_bottom = 952.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 9 )
+format = 1
+tile_data = PoolIntArray( 65537, -1073741823, 0, 65538, -1073741823, 0, 65539, -1073741823, 0, 65540, -1073741823, 0, 65541, -1073741823, 0, 65542, 1073741825, 0, 65543, 1073741825, 0, 65548, 1073741825, 0, 65549, 1073741825, 0, 65550, 1073741825, 0, 65551, 1073741825, 0, 65552, 1073741825, 0, 65553, 1073741825, 0, 131078, 1073741825, 0, 131079, 1073741825, 0, 131081, -1610612730, 0, 131082, 1073741825, 0, 131084, 1073741825, 0, 131085, 1073741825, 0, 131086, 1073741825, 0, 131087, 1073741825, 0, 131088, 1073741825, 0, 131089, 1073741825, 0, 196609, -1073741823, 0, 196610, -1073741823, 0, 196611, -1610612730, 0, 196614, 1073741825, 0, 196615, 1073741825, 0, 196617, 1073741825, 0, 196618, 1073741825, 0, 196620, 1073741825, 0, 196621, 1073741825, 0, 196622, 1073741825, 0, 196623, 1073741825, 0, 196624, 1073741825, 0, 196625, 1073741825, 0, 262145, -1073741823, 0, 262150, 1073741825, 0, 262151, 1073741825, 0, 262153, 1073741825, 0, 262154, 1073741825, 0, 262156, 1073741825, 0, 262157, 1073741825, 0, 262158, 1073741825, 0, 262159, 1073741825, 0, 262160, 1073741825, 0, 262161, 1073741825, 0, 327681, -1073741823, 0, 327683, 1073741825, 0, 327684, -1073741823, 0, 327685, -1073741823, 0, 327686, 1073741825, 0, 327687, 1073741825, 0, 327689, 1073741825, 0, 327690, 1073741825, 0, 327692, 1073741825, 0, 327693, 1073741825, 0, 327694, 1073741825, 0, 327695, 1073741825, 0, 327696, 1073741825, 0, 327697, 1073741825, 0, 393217, -1073741823, 0, 393221, 1073741825, 0, 393222, 1073741825, 0, 393223, 1073741825, 0, 393225, 1073741825, 0, 393226, 1073741825, 0, 458753, -1073741823, 0, 458754, -1073741823, 0, 458755, -1610612730, 0, 458757, 1073741825, 0, 458758, 1073741825, 0, 458759, 1073741825, 0, 458762, 1073741825, 0, 458763, 1073741825, 0, 458764, 1073741825, 0, 458765, 1073741825, 0, 458766, 1073741825, 0, 458767, 1073741825, 0, 458768, 1073741825, 0, 458769, 1073741825, 0, 524293, 1073741825, 0, 524294, 1073741825, 0, 524295, 1073741825, 0, 524296, 1073741825, 0, 524298, 1073741825, 0, 524299, 1073741825, 0, 524300, 1073741825, 0, 524301, 1073741825, 0, 524302, 1073741825, 0, 524303, -2147483642, 0, 524304, 1073741825, 0, 524305, 1073741825, 0, 589826, 1073741825, 0, 589827, 1073741825, 0, 589828, 1073741825, 0, 589829, 1073741825, 0, 589830, 1073741825, 0, 589831, 1073741825, 0, 589832, -536870906, 0, 589834, 1073741825, 0, 589835, 1073741830, 0, 589836, 1073741825, 0, 589837, 1073741825, 0, 589838, 1073741825, 0, 589839, 1073741825, 0, 589840, 1073741825, 0, 589841, 1073741825, 0, 655370, 1073741825, 0, 655371, 1073741825, 0, 655372, 1073741825, 0, 655373, 1073741825, 0, 655374, 1073741825, 0, 655375, 1073741825, 0, 655376, 1073741825, 0, 655377, 1073741825, 0 )
+
+[node name="nav" type="Navigation2D" parent="."]
+
+[node name="TileMap_road" type="TileMap" parent="nav"]
+tile_set = ExtResource( 9 )
+format = 1
+tile_data = PoolIntArray( 65544, -2147483643, 0, 65545, 1610612739, 0, 65546, 1073741827, 0, 65547, -1610612731, 0, 131073, 3, 0, 131074, 1073741826, 0, 131075, 1073741826, 0, 131076, 1073741826, 0, 131077, -1610612731, 0, 131080, -2147483646, 0, 131083, -2147483646, 0, 196612, 1073741825, 0, 196613, -1073741821, 0, 196616, -2147483646, 0, 196619, -2147483646, 0, 262146, -2147483643, 0, 262147, 1073741826, 0, 262148, 1073741826, 0, 262149, -536870908, 0, 262152, -2147483646, 0, 262155, -1073741821, 0, 327682, -2147483646, 0, 327688, -2147483646, 0, 327691, -2147483645, 0, 393218, -1073741820, 0, 393219, 1073741826, 0, 393220, -1610612731, 0, 393224, -2147483646, 0, 393227, 1073741829, 0, 393228, 1073741826, 0, 393229, 1073741826, 0, 393230, 536870915, 0, 393231, 3, 0, 393232, 1073741826, 0, 393233, 1073741826, 0, 458756, -2147483646, 0, 458760, -1073741820, 0, 458761, -1610612732, 0, 524289, -2147483643, 0, 524290, 1073741826, 0, 524291, 1073741826, 0, 524292, 1610612741, 0, 524297, -2147483645, 0, 589825, -2147483646, 0, 589833, -1073741821, 0, 655361, 1073741829, 0, 655362, 1073741826, 0, 655363, 3, 0, 655364, 536870915, 0, 655365, 1073741826, 0, 655366, 3, 0, 655367, 536870915, 0, 655368, 1073741826, 0, 655369, -536870908, 0 )
+
+[node name="Path_enemy" type="Path2D" parent="."]
+self_modulate = Color( 0.501961, 0.6, 1, 0 )
+curve = SubResource( 1 )
+
+[node name="WaveTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CashTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Entities" type="YSort" parent="."]
+
+[node name="Tower_placement" type="TileMap" parent="."]
+tile_set = SubResource( 2 )
+format = 1
+
+[node name="startMenu" type="Sprite" parent="."]
+position = Vector2( 1036, 112 )
+scale = Vector2( 0.725, 0.4 )
+texture = ExtResource( 13 )
+
+[node name="Cash" type="Label" parent="."]
+margin_left = 939.0
+margin_top = 72.0
+margin_right = 1035.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 3 )
+text = "cash:  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Procesador_Grande" type="Sprite" parent="."]
+position = Vector2( 1096, 104 )
+texture = ExtResource( 19 )
+
+[node name="life_bar" type="AnimatedSprite" parent="."]
+position = Vector2( 1096, 144 )
+frames = SubResource( 4 )
+
+[node name="Build_tower" type="Button" parent="."]
+margin_left = 936.0
+margin_top = 104.0
+margin_right = 1016.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 6 )
+text = "Build"
+icon = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1165, 416 )
+shape = SubResource( 5 )
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="." groups=[
+"bgm",
+]]
+pause_mode = 2
+stream = ExtResource( 32 )
+volume_db = -20.0
+autoplay = true
+
+[node name="Build_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+volume_db = -15.0
+[connection signal="pressed" from="PowerButton" to="." method="_on_PowerButton_pressed"]
+[connection signal="pressed" from="SleepButton" to="." method="_on_SleepButton_pressed"]
+[connection signal="timeout" from="WaveTimer" to="." method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="CashTimer" to="." method="_on_CashTimer_timeout"]
+[connection signal="pressed" from="Build_tower" to="." method="_on_Build_tower_pressed"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="finished" from="Background_Music" to="." method="_on_Background_Music_finished"]
